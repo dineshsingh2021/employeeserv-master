@@ -1,0 +1,5 @@
+com\paypal\bfs\test\employeeserv\Swagger2UiConfiguration.class
+com\paypal\bfs\test\employeeserv\impl\EmployeeResourceImpl.class
+com\paypal\bfs\test\employeeserv\EmployeeservApplication.class
+com\paypal\bfs\test\employeeserv\Service\EmployeeService.class
+com\paypal\bfs\test\employeeserv\validation\ApiValidation.class

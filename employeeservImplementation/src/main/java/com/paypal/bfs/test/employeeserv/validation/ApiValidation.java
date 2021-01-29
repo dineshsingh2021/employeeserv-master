@@ -1,6 +1,6 @@
 package com.paypal.bfs.test.employeeserv.validation;
 
-import PersistenceClasses.EmployeeDetails;
+import com.paypal.bfs.test.employeeserv.api.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class ApiValidation {
 
     }
 
-     public String  createEmployeeFieldsValidation( EmployeeDetails employeeDetails ) {
+     public String  createEmployeeFieldsValidation( Employee employeeDetails ) {
         String mandatoryFields = null;
         if ( employeeDetails.getAddress( ).getLine1( ) == null || employeeDetails.getAddress( ).getLine1( ).trim( ).isEmpty( ) ) {
             mandatoryFields = "Please Provide address Line1." + "/n";

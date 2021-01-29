@@ -50,26 +50,16 @@ API's Description -
 
 API documentations-
 - Get employee
-  http://localhost:8085/employees/{empid}
+  http://localhost:8085/v1/bfs/employees/{empid}
 
 - POST employee
-  http://localhost:8085/addEmployeeDetails
+  http://localhost:8085/v1/bfs/addEmployee
    Post Body :
-   {"firstName":"Rajesh","lastName":"Kumar","birthDate":"06-06-1988","id":"1000","address":{"line1":"D-401","line2":"Street 6","city":"Chicago","state":"Missouri","country":"USA","zipCode":"712101"}}
+   {"id":3,"first_name":"Lala","last_name":"Tez","date_of_birth":"05-12-1982","address":{"line1":"kaju","city":"St. Louis","state":"f","country":"USA","zip_code":"4655555"}}
    Technical descrpition :
    @Empid creation is taken care by the api even though you provide empid while creating resouce it will be ignored.
    @Idempotent of Post method is taken care. You have to provide key in header.
    @Idempotent key is : idempotent-key.
 
-- To create idempotent scenario you have to comment out line nos 26 and 27 form class EmployeeService.
 
 
-I have written few below api's for my reference please ignore those.
-
-- Get all employees
-  http://localhost:8085/employees
-
-- Update employee
-  PUT : http://localhost:8085/updateEmployeeDetails/3
-  Request Body :
-  {"firstName":"Hello","lastName":"Kumar","birthDate":"06-06-1988","id":"3","address":{"line1":"D-401","line2":"Street 6","city":"Chicago","state":"Missouri","country":"USA","zipCode":"712101"}}

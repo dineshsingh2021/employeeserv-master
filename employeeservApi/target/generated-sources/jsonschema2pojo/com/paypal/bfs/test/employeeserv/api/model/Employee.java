@@ -22,7 +22,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "id",
     "first_name",
-    "last_name"
+    "last_name",
+    "date_of_birth",
+    "address"
 })
 public class Employee {
 
@@ -49,6 +51,24 @@ public class Employee {
     @JsonProperty("last_name")
     @JsonPropertyDescription("last name")
     private String lastName;
+    /**
+     * date of birth
+     * (Required)
+     * 
+     */
+    @JsonProperty("date_of_birth")
+    @JsonPropertyDescription("date of birth")
+    private String dateOfBirth;
+    /**
+     * Address resource
+     * <p>
+     * Address resource object
+     * (Required)
+     * 
+     */
+    @JsonProperty("address")
+    @JsonPropertyDescription("Address resource object")
+    private Address address;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -110,6 +130,50 @@ public class Employee {
         this.lastName = lastName;
     }
 
+    /**
+     * date of birth
+     * (Required)
+     * 
+     */
+    @JsonProperty("date_of_birth")
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    /**
+     * date of birth
+     * (Required)
+     * 
+     */
+    @JsonProperty("date_of_birth")
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    /**
+     * Address resource
+     * <p>
+     * Address resource object
+     * (Required)
+     * 
+     */
+    @JsonProperty("address")
+    public Address getAddress() {
+        return address;
+    }
+
+    /**
+     * Address resource
+     * <p>
+     * Address resource object
+     * (Required)
+     * 
+     */
+    @JsonProperty("address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
@@ -135,6 +199,14 @@ public class Employee {
         sb.append("lastName");
         sb.append('=');
         sb.append(((this.lastName == null)?"<null>":this.lastName));
+        sb.append(',');
+        sb.append("dateOfBirth");
+        sb.append('=');
+        sb.append(((this.dateOfBirth == null)?"<null>":this.dateOfBirth));
+        sb.append(',');
+        sb.append("address");
+        sb.append('=');
+        sb.append(((this.address == null)?"<null>":this.address));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
